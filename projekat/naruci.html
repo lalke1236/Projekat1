@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruci</title>
+</head>
+<body>
+        <h1 style="text-align: center;">Prodavnica automobila - Novi Sad</h1>
+        <hr>
+        <nav>
+            <ul style="display: flex;">
+                <li style="list-style-type: none; margin: 6px; border: 1px solid black;">
+                    <a href="pocetna.html" style="text-decoration: none; color: white; background-color: red; font-weight: bold; padding: 3px;">Pocetna</a>
+                </li>
+
+                <li style="list-style-type: none; margin: 6px; border: 1px solid black;">
+                    <a href="automobili.html" style="text-decoration: none; color: white; background-color: red; font-weight: bold; padding: 3px;">Automobili</a>
+                </li>
+                
+                <li style="list-style-type: none; margin: 6px; border: 1px solid black;">
+                    <a href="naruci.html" style="text-decoration: none; color: white; background-color: red; font-weight: bold; padding: 3px;">Naruci</a>
+                </li>
+                
+                <li style="list-style-type: none; margin: 6px; border: 1px solid black;">
+                    <a href="utisak.html" style="text-decoration: none; color: white; background-color: red; font-weight: bold; padding: 3px;">Ostavite utisak</a>
+                </li>
+            </ul>
+        </nav>
+
+        <h2>Ovde mozes naruciti auto:</h2>
+
+        <form>
+            <label for="naziv">Naziv automobila:</label>
+            <input type="text" id="naziv" name="naziv">
+            <br>
+            <button type="button" onclick="naruci()" style="color: white; background-color: red;">Naruči</button>
+          </form>
+          <p id="rezultat"></p>
+      
+          <script>
+            let naziviAutomobila = ['golf', 'mercedes', 'Linzda', 'peugeot'];
+            let ceneAutomobila = ['13.450 €', '83.200 €', '5.599 €', '6.200 €'];
+      
+            function naruci() {
+              let nazivInput = document.getElementById('naziv');
+              let naziv = nazivInput.value.toLowerCase();
+      
+              let index = naziviAutomobila.indexOf(naziv);
+      
+              if (index !== -1) {
+                let cena = ceneAutomobila[index];
+                let rezultat = 'Naručili ste automobil ' + naziv + ' po ceni od ' + cena + '.';
+                document.getElementById('rezultat').textContent = rezultat;
+              } else {
+                document.getElementById('rezultat').textContent = 'Tog automobila nema na stanju.';
+              }
+            }
+          </script>  
+      </body>
+</html>
