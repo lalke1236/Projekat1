@@ -16,4 +16,4 @@ document.querySelector('form').addEventListener('submit', function(e) {
 
     let podaci = pokupiPodatke();
     document.getElementById('podaci').innerHTML = podaci;
-}
+})
